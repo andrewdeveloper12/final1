@@ -28,6 +28,7 @@ import UserHistory from './components/auth/UserHistory';
 import CommunityPage from './pages/CommunityPage';
 import ToastContainer from './ToastContainer';
 import { UserProvider } from './components/Context/UserContext.context'; // Correct import for UserContext
+// import VerifyEmailPage from './pages/VerifyEmailPage';
 
 const AppContent: React.FC = () => {
   const { i18n } = useTranslation();
@@ -41,12 +42,16 @@ const AppContent: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          
+          {/* Redirect to home if already authenticated */}
           <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <LoginPage />} />
           <Route path="/register" element={isAuthenticated ? <Navigate to="/" /> : <RegisterPage />} />
+          
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/communitypage" element={<CommunityPage />} />
+
 
           {/* Protected routes */}
           <Route element={<ProtectedRoute />}>
@@ -62,6 +67,9 @@ const AppContent: React.FC = () => {
             <Route path="/nutrition-checker" element={<NutritionChecker />} />
             <Route path="/statistics" element={<StatisticsPage />} />
             <Route path="/toastContainer" element={<ToastContainer />} />
+            {/* <Route path="/VerifyEmailPage" element={<VerifyEmailPage />} /> */}
+
+            
           </Route>
         </Routes>
       </main>
