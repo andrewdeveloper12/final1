@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@vitejs/plugin-react": "^4.4.1",
+    "axios": "^1.9.0",
+    "from": "^0.1.7",
+    "import": "^0.0.6",
+    "react": "^19.1.0",
+    "react-hot-toast": "^2.5.2",
+    "react-toastify": "^11.0.5",
+    "tesseract.js": "^6.0.1"
+  }
+}
